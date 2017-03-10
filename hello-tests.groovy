@@ -1,9 +1,9 @@
 class HelloWorldControllerTest {
     @Test
-    void helloWorldShouldWork() throws Exception {
-        assertEquals(
-            "Hello, Reader\n", 
-            new HelloWorldController()
-                .hello("Reader"))
+    void helloWorldShouldWork() {
+        def greeting = new HelloWorldController()
+                            .hello("Reader")
+        assert  greeting ==~ "Hello, Reader[\r\n]+"
+
     }
 }
